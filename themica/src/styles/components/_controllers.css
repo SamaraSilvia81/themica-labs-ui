@@ -1,0 +1,626 @@
+/* ================================================
+   CONTROLADORES FLUTUANTES (Theme / Typo / Nav)
+   ================================================ */
+.controller-buttons {
+    position: fixed; bottom: 2rem; right: 2rem;
+    display: flex; flex-direction: row; gap: 1rem; z-index: 999;
+}
+
+.theme-controller-toggle,
+.typo-controller-toggle,
+.nav-controller-toggle {
+    width: 60px; height: 60px;
+    background: var(--gradient-primary); color: white;
+    border: none; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: all 0.3s ease;
+}
+.nav-controller-toggle { background: var(--gradient-accent); }
+.theme-controller-toggle:hover,
+.typo-controller-toggle:hover,
+.nav-controller-toggle:hover { transform: scale(1.1) rotate(15deg); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+.theme-controller-toggle:active,
+.typo-controller-toggle:active,
+.nav-controller-toggle:active { transform: scale(0.95); }
+
+.theme-controller,
+.nav-controller {
+    position: fixed; bottom: 2rem; right: 2rem;
+    width: 460px;          /* mais largo — chega de scroll horizontal */
+    max-height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;    /* nunca scroll horizontal */
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    border: 1px solid var(--glass-border); z-index: 1000;
+    opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.typo-controller {
+    position: fixed; bottom: 2rem; right: 2rem; width: 520px; max-height: 85vh; overflow-y: auto;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    border: 1px solid var(--glass-border); z-index: 1000;
+    opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.theme-controller.active,
+.typo-controller.active,
+.nav-controller.active { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+.controller-header { margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+.controller-header h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+
+.btn-close-controller {
+    width: 32px; height: 32px; border: none; background: var(--bg-elevated);
+    color: var(--text-secondary); border-radius: 8px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;
+}
+.btn-close-controller:hover { background: var(--danger); color: white; }
+
+.controller-section { margin-bottom: 1.5rem; }
+.controller-section:last-child { margin-bottom: 0; }
+.controller-section label {
+    display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border-color);
+}
+
+.palette-buttons, .typo-buttons, .nav-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+.nav-buttons { grid-template-columns: 1fr; }
+
+.btn-palette, .btn-typo, .btn-nav {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.7rem 0.9rem;
+    border: 2px solid var(--border-color); background: var(--bg-elevated); backdrop-filter: var(--glass-blur);
+    border-radius: 10px; cursor: pointer; transition: all 0.3s ease;
+    font-weight: 600; font-size: 0.82rem; color: var(--text-primary);
+    text-align: left; min-width: 0; width: 100%;
+}
+.btn-palette:hover, .btn-typo:hover, .btn-nav:hover { border-color: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn-palette.active, .btn-typo.active, .btn-nav.active { border-color: var(--primary); background: rgba(99,102,241,0.1); }
+
+/* Nome do tema — não truncar, deixar quebrar em 2 linhas se precisar */
+.btn-palette span:not(.palette-preview),
+.btn-nav span { line-height: 1.3; }
+
+.palette-preview      { display: flex; gap: 5px; flex-shrink: 0; }
+.palette-preview span { width: 22px; height: 22px; border-radius: 5px; border: 1px solid rgba(255,255,255,0.25); flex-shrink: 0; }
+.typo-preview          { font-size: 1.5rem; font-weight: 700; min-width: 40px; text-align: center; }
+.typo-info             { display: flex; flex-direction: column; gap: 0.125rem; }
+.typo-name             { font-weight: 700; font-size: 0.9rem; }
+.typo-description      { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ================================================
+   EDITOR DE CORES CUSTOMIZADAS
+   ================================================ */
+.color-editor-section {
+    border-top: 1.5px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* 2 colunas simétricas — cada célula tem label + swatch + input empilhados */
+.color-editor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 0.75rem;
+}
+
+/* Cada campo: label em cima, depois swatch + input na mesma linha */
+.color-editor-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+/* Label acima do campo — NÃO herda o estilo do .controller-section label */
+.color-editor-field > label {
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    color: var(--text-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* reset do label global */
+    display: block !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Linha swatch + input */
+.color-input-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.3rem;
+    height: 30px;
+}
+
+/* Swatch quadrado usando o input nativo como fundo inteiro */
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1.5px solid var(--border-color);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.color-swatch input[type="color"] {
+    position: absolute;
+    inset: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* Input hex — ocupa o restante da linha */
+.color-hex-input {
+    flex: 1;
+    min-width: 0;
+    height: 32px;
+    padding: 0 0.5rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    transition: border-color 0.2s;
+    line-height: 32px;
+    letter-spacing: 0.02em;
+}
+.color-hex-input:focus { outline: none; border-color: var(--primary); }
+
+.btn-apply-colors {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.6rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.btn-apply-colors:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.btn-reset-colors {
+    width: 100%;
+    margin-top: 0.35rem;
+    padding: 0.5rem;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-reset-colors:hover { border-color: var(--danger); color: var(--danger); }
+
+.custom-theme-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: var(--gradient-accent);
+    color: white;
+    border-radius: 20px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+/* ================================================
+   MINHAS PALETAS — seção de paletas customizadas
+   ================================================ */
+.custom-palettes-section > label {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custom-count {
+    font-size: 0.65rem;
+    font-weight: 700;
+    background: var(--bg-glass);
+    color: var(--text-muted);
+    padding: 0.1rem 0.4rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    margin-left: auto;
+}
+
+.custom-empty {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    text-align: center;
+    padding: 0.75rem;
+    border: 1.5px dashed var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+}
+
+.custom-palette-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Linha de cada paleta salva */
+.custom-palette-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-elevated);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.custom-palette-item:hover { border-color: var(--primary); }
+.custom-palette-item.active {
+    border-color: var(--primary);
+    background: rgba(99,102,241,0.08);
+    box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* Botão principal (ativa a paleta) */
+.custom-apply-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    min-width: 0;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.82rem;
+    font-family: var(--font-body);
+}
+.custom-apply-btn:hover { background: var(--bg-glass); }
+
+.custom-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    font-size: 0.82rem;
+    color: var(--text-primary);
+}
+
+/* Botões de ação (duplicar / excluir) */
+.custom-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding-right: 0.4rem;
+    flex-shrink: 0;
+}
+
+.custom-btn-dupe,
+.custom-btn-del {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: background 0.15s, color 0.15s;
+}
+.custom-btn-dupe:hover { background: var(--bg-glass); color: var(--primary); }
+.custom-btn-del:hover  { background: rgba(239,68,68,0.1); color: var(--danger); }
+
+/* Botão salvar */
+.btn-save-palette {
+    width: 100%;
+    padding: 0.6rem;
+    background: transparent;
+    color: var(--primary);
+    border: 2px dashed var(--primary);
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.btn-save-palette:hover:not(.disabled) {
+    background: var(--primary);
+    color: white;
+    border-style: solid;
+}
+.btn-save-palette.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-style: solid;
+    color: var(--text-muted);
+}
+
+/* ================================================
+   PAINEL DE ÍCONES
+   ================================================ */
+.icon-controller {
+    position: fixed; bottom: 2rem; right: 2rem; width: 300px;
+    max-height: 85vh; overflow-y: auto; overflow-x: hidden;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    border: 1px solid var(--glass-border); z-index: 1000;
+    opacity: 0; transform: translateY(20px) scale(0.9); pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.icon-controller.active { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+/* Toggle button — mesmo estilo dos outros */
+.icon-controller-toggle {
+    width: 60px; height: 60px;
+    background: var(--gradient-primary); color: white;
+    border: none; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: all 0.3s ease;
+    filter: hue-rotate(30deg);
+}
+.icon-controller-toggle:hover { transform: scale(1.1) rotate(15deg); box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+.icon-controller-toggle:active { transform: scale(0.95); }
+
+/* Botões de set de ícone */
+.icon-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.btn-icon-set {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.65rem 1rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-elevated);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    text-align: left;
+    width: 100%;
+    font-family: var(--font-body);
+}
+.btn-icon-set:hover  { border-color: var(--primary); transform: translateX(3px); }
+.btn-icon-set.active { border-color: var(--primary); background: rgba(99,102,241,0.08); }
+
+.icon-set-preview {
+    font-size: 1.3rem;
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+.icon-set-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+.icon-set-name { font-weight: 700; font-size: 0.85rem; color: var(--text-primary); }
+.icon-set-lib  { font-size: 0.68rem; font-weight: 500; color: var(--text-muted); font-family: 'Courier New', monospace; }
+
+/* ================================================
+   MODAL DE PALETA (substitui prompt/confirm nativos)
+   ================================================ */
+.palette-modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1rem;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.palette-modal-overlay.active {
+    opacity: 1; pointer-events: auto;
+}
+
+.palette-modal {
+    background: var(--bg-elevated);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.2);
+    transform: translateY(12px) scale(0.97);
+    transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.palette-modal-overlay.active .palette-modal {
+    transform: translateY(0) scale(1);
+}
+
+.palette-modal-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+.palette-modal-header h4 {
+    font-size: 1rem; font-weight: 700;
+    color: var(--text-primary);
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: var(--font-heading);
+}
+.palette-modal-close {
+    width: 28px; height: 28px; border: none;
+    background: var(--bg-glass); color: var(--text-muted);
+    border-radius: 6px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+.palette-modal-close:hover { background: var(--danger); color: white; }
+
+/* Preview das cores no modal */
+.palette-modal-preview {
+    display: flex; gap: 6px;
+    margin-bottom: 1.25rem;
+    padding: 0.75rem;
+    background: var(--bg-glass);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+.palette-modal-preview span {
+    flex: 1; height: 28px; border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.palette-modal-label {
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 0.5px; margin-bottom: 0.4rem;
+    display: block;
+}
+.palette-modal-input {
+    width: 100%; padding: 0.65rem 0.85rem;
+    border: 2px solid var(--border-color);
+    border-radius: 9px;
+    font-size: 0.95rem; font-family: var(--font-body);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    outline: none; transition: border-color 0.2s;
+    margin-bottom: 1.25rem;
+}
+.palette-modal-input:focus { border-color: var(--primary); }
+
+.palette-modal-actions {
+    display: flex; gap: 0.6rem;
+}
+.palette-modal-actions button {
+    flex: 1; padding: 0.65rem;
+    border-radius: 9px; font-weight: 700;
+    font-size: 0.88rem; cursor: pointer;
+    font-family: var(--font-heading);
+    transition: all 0.2s;
+}
+.btn-modal-cancel {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1.5px solid var(--border-color);
+}
+.btn-modal-cancel:hover { border-color: var(--text-muted); color: var(--text-primary); }
+
+.btn-modal-confirm {
+    background: var(--gradient-primary);
+    color: white; border: none;
+}
+.btn-modal-confirm:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* Modal de confirmação (excluir) */
+.palette-modal-danger .palette-modal-header h4 { color: var(--danger); }
+.btn-modal-danger {
+    background: var(--danger); color: white; border: none;
+}
+.btn-modal-danger:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ================================================
+   PALETAS PADRÃO — recolhível com setinha
+   ================================================ */
+.palette-section-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+    /* herda o estilo do label da controller-section */
+}
+.palette-section-toggle .toggle-arrow {
+    font-size: 0.7rem; color: var(--text-muted);
+    transition: transform 0.25s ease;
+    display: inline-flex; align-items: center;
+}
+.palette-section-toggle.collapsed .toggle-arrow {
+    transform: rotate(-90deg);
+}
+.palette-buttons-wrap {
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.25s ease;
+    max-height: 1200px;
+    opacity: 1;
+}
+.palette-buttons-wrap.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* Faz palette-section-toggle se comportar como label */
+.palette-section .palette-section-toggle {
+    display: block;
+    font-size: 0.8rem; font-weight: 700; color: var(--text-secondary);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 0.75rem; padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+}
+.palette-section .palette-section-toggle:hover { color: var(--primary); }
+.palette-buttons-wrap { padding-top: 0.1rem; }
+
+/* Padding acima do label MODO */
+.controller-section:has(#btn-toggle-mode) {
+    padding-top: 0.5rem;
+}
+/* Fallback sem :has */
+.mode-section { margin-top: 0.75rem; }
+
+/* ── BLOBS toggle ── */
+/* Padrão: blobs visíveis */
+.background-blobs-container { opacity: 1; transition: opacity 0.5s ease; }
+/* Com classe no-blobs no body: some suavemente */
+body.no-blobs .background-blobs-container { opacity: 0; pointer-events: none; }
+
+.btn-blobs {
+    width: 100%; margin-top: 0.5rem;
+    padding: 0.6rem;
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 9px;
+    font-weight: 600; font-size: 0.85rem;
+    font-family: var(--font-heading);
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.btn-blobs:hover  { border-color: var(--primary); color: var(--primary); }
+.btn-blobs.active { background: var(--bg-glass); border-color: var(--primary); color: var(--primary); }

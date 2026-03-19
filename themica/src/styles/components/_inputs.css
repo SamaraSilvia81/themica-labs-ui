@@ -1,0 +1,82 @@
+/* ================================================
+   INPUTS & FORMULARIOS
+   ================================================ */
+.input-group {
+    position: relative; margin-bottom: 1.5rem;
+}
+.input-group i {
+    position: absolute; left: 1rem; top: 50%;
+    transform: translateY(-50%); color: var(--text-muted); font-size: 1.2rem;
+}
+.input-group input {
+    width: 100%; padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid var(--border-color); border-radius: 12px;
+    font-size: 1rem; font-family: var(--font-body);
+    background: var(--bg-surface); backdrop-filter: var(--glass-blur);
+    color: var(--text-primary); transition: all 0.3s ease;
+}
+.input-group input:focus {
+    outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+/* Checkbox — input nativo escondido, só .checkmark aparece */
+.checkbox {
+    display: flex; align-items: center; gap: 0.5rem;
+    cursor: pointer; color: var(--text-secondary);
+    font-size: 0.9rem; font-weight: 500;
+    position: relative;
+}
+.checkbox input[type="checkbox"] {
+    position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.checkmark {
+    width: 18px; height: 18px; min-width: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+    background: var(--bg-surface);
+}
+.checkbox:has(input:checked) .checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+.checkbox:has(input:checked) .checkmark::after {
+    content: '';
+    width: 5px; height: 9px;
+    border: 2px solid white;
+    border-top: none; border-left: none;
+    transform: rotate(45deg) translate(-1px, -1px);
+    display: block;
+}
+
+.link-forgot { color: var(--primary); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.3s ease; }
+.link-forgot:hover { color: var(--primary-hover); }
+
+.link-primary { color: var(--primary); text-decoration: none; font-weight: 600; }
+.link-primary:hover { text-decoration: underline; }
+
+.form-header { margin-bottom: 2rem; }
+.form-header h2 { font-size: 2rem; color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 700; }
+.form-header p  { color: var(--text-secondary); font-weight: 500; }
+
+.form-footer { text-align: center; margin-top: 2rem; color: var(--text-secondary); font-weight: 500; }
+
+.search-box { position: relative; }
+.search-box i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.search-box input {
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 2px solid var(--border-color); border-radius: 10px;
+    background: var(--bg-elevated); backdrop-filter: var(--glass-blur);
+    color: var(--text-primary); font-family: var(--font-body); width: 280px;
+}
+.search-box input:focus { outline: none; border-color: var(--primary); }
+
+/* ── Row: Lembrar de mim ←→ Esqueceu a senha ── */
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}

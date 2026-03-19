@@ -1,0 +1,28 @@
+/* ================================================
+   TABELA DE DADOS
+   ================================================ */
+.table-section {
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem; box-shadow: var(--shadow-sm); border: 1px solid var(--glass-border);
+}
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.section-header h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
+.section-actions { display: flex; gap: 1rem; }
+
+.table-wrapper { overflow-x: auto; margin-bottom: 1.5rem; }
+.data-table { width: 100%; border-collapse: collapse; }
+.data-table thead { background: var(--bg-elevated); backdrop-filter: var(--glass-blur); }
+.data-table th {
+    padding: 1rem; text-align: left; font-weight: 700; color: var(--text-secondary);
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-heading);
+}
+.data-table tbody tr { border-bottom: 1px solid var(--border-color); transition: background 0.2s ease; }
+.data-table tbody tr:hover { background: var(--bg-elevated); }
+.data-table td { padding: 1rem; font-weight: 500; color: var(--text-primary); font-family: var(--font-body); }
+
+.patient-info   { display: flex; align-items: center; gap: 0.75rem; }
+.patient-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+
+.table-footer { display: flex; justify-content: space-between; align-items: center; }
+.table-info   { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
+.pagination   { display: flex; gap: 0.5rem; }

@@ -1,0 +1,33 @@
+/* ================================================
+   TIPOGRAFIAS — tokens de fonte
+   Cada classe define --font-heading e --font-body.
+   Adicionado: Cormorant Garamond com itálico completo
+   para uso correto no estilo Themica/Delicatte.
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Red+Hat+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=Archivo+Black&display=swap');
+
+/* ── Pares (heading + body diferentes) ─────── */
+.typo-redhat         { --font-heading: 'Red Hat Display', sans-serif;        --font-body: 'Red Hat Display', sans-serif; }
+.typo-poppins-inter  { --font-heading: 'Poppins', sans-serif;                --font-body: 'Inter', sans-serif; }
+.typo-outfit-dmsans  { --font-heading: 'Outfit', sans-serif;                 --font-body: 'DM Sans', system-ui, sans-serif; }
+.typo-space-inter    { --font-heading: 'Space Grotesk', sans-serif;          --font-body: 'Inter', sans-serif; }
+.typo-sora-jakarta   { --font-heading: 'Sora', sans-serif;                   --font-body: 'Plus Jakarta Sans', sans-serif; }
+.typo-manrope-nunito { --font-heading: 'Manrope', sans-serif;                --font-body: 'Nunito', sans-serif; }
+
+/* ── Delicatte (Cormorant + DM Sans) ───────── */
+/* Exatamente a combinação usada no projeto Delicatte */
+.typo-delicatte      { --font-heading: 'Cormorant Garamond', Georgia, serif; --font-body: 'DM Sans', system-ui, sans-serif; }
+
+/* ── Serifa pura (Cormorant + Jakarta) ──────── */
+.typo-zodiak-jakarta { --font-heading: 'Cormorant Garamond', Georgia, serif; --font-body: 'Plus Jakarta Sans', sans-serif; }
+
+/* ── Display bold (Archivo + Jakarta) ──────── */
+.typo-clash-jakarta  { --font-heading: 'Archivo Black', Impact, sans-serif;  --font-body: 'Plus Jakarta Sans', sans-serif; }
+
+/* ── Singles ────────────────────────────────── */
+.typo-inter    { --font-heading: 'Inter', sans-serif;             --font-body: 'Inter', sans-serif; }
+.typo-dmsans   { --font-heading: 'DM Sans', system-ui, sans-serif; --font-body: 'DM Sans', system-ui, sans-serif; }
+.typo-jakarta  { --font-heading: 'Plus Jakarta Sans', sans-serif; --font-body: 'Plus Jakarta Sans', sans-serif; }
+.typo-poppins  { --font-heading: 'Poppins', sans-serif;           --font-body: 'Poppins', sans-serif; }
+.typo-sora     { --font-heading: 'Sora', sans-serif;              --font-body: 'Sora', sans-serif; }

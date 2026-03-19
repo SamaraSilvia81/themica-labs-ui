@@ -1,0 +1,31 @@
+/* ================================================
+   DASHBOARD
+   ================================================ */
+.dashboard-container { padding: 2rem; max-width: 1400px; margin: 0 auto; }
+
+.dashboard-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 2rem; padding: 1.5rem;
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--glass-border);
+}
+
+.header-left     { display: flex; align-items: center; gap: 1rem; }
+.header-left h1  { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+.header-right    { display: flex; align-items: center; gap: 1rem; }
+
+.logo-mini {
+    width: 48px; height: 48px; background: var(--gradient-primary);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+}
+.logo-mini i { color: white; font-size: 1.5rem; }
+
+.user-menu {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.5rem 1rem; background: var(--bg-elevated); backdrop-filter: var(--glass-blur);
+    border-radius: 12px; cursor: pointer; transition: all 0.3s ease; border: 1px solid var(--glass-border);
+}
+.user-menu:hover { background: var(--gradient-primary); color: white; transform: translateY(-2px); }
+.avatar    { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.user-name { font-weight: 600; color: var(--text-primary); }
+.user-menu:hover .user-name { color: white; }

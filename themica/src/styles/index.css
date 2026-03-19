@@ -1,0 +1,40 @@
+/* ================================================
+   UX LAB — PONTO DE ENTRADA DO CSS
+   Importa todos os módulos na ordem correta.
+
+   Estrutura:
+   1. Tokens       → variáveis globais (tipografia, espaçamento)
+   2. Temas        → paletas de cores (16 temas)
+   3. Utils        → reset, animações
+   4. Components   → botões, inputs, cards, tabela, controllers
+   5. Pages        → login, dashboard
+   6. Responsive   → breakpoints
+   ================================================ */
+
+/* 1 — Tokens */
+@import './tokens/_typography.css';
+@import './tokens/_spacing.css';
+
+/* 2 — Temas */
+@import './themes/_reverie-soft.css';
+@import './themes/_all-themes.css';
+@import './themes/_delicatte.css';
+
+/* 3 — Utils */
+@import './utils/_reset.css';
+@import './utils/_animations.css';
+
+/* 4 — Components */
+@import './components/_buttons.css';
+@import './components/_inputs.css';
+@import './components/_cards.css';
+@import './components/_table.css';
+@import './components/_controllers.css';
+@import './components/_typography-showcase.css';
+
+/* 5 — Pages */
+@import './pages/_login.css';
+@import './pages/_dashboard.css';
+
+/* 6 — Responsive */
+@import './utils/_responsive.css';

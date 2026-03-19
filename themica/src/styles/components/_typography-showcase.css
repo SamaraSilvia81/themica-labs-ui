@@ -1,0 +1,113 @@
+/* ================================================
+   SHOWCASE DE TIPOGRAFIA
+   ================================================ */
+.typo-showcase {
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm); border: 1px solid var(--glass-border);
+}
+.typo-showcase h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+.typo-samples    { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.typo-sample {
+    padding: 1.5rem; background: var(--bg-elevated); backdrop-filter: var(--glass-blur);
+    border-radius: 12px; border: 2px solid var(--border-color); transition: all 0.3s ease;
+}
+.typo-sample:hover { border-color: var(--border-hover); transform: translateX(4px); }
+.typo-sample h3    { font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; font-family: var(--font-heading); }
+.typo-sample p     { font-size: 1rem; color: var(--text-secondary); line-height: 1.6; font-family: var(--font-body); }
+.typo-sample .numbers { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-top: 0.5rem; font-family: var(--font-heading); }
+
+/* Themica no showcase — herda heading ativa, em itálico na cor accent */
+.typo-sample .brand-themica {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    line-height: 1.1;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+.typo-sample .brand-themica em {
+    font-style: italic;
+    color: var(--accent);   /* sempre segue o accent do tema ativo */
+    font-weight: 200;
+}
+.typo-sample h3 em {
+    font-style: italic;
+    color: var(--accent);
+}
+/* Delicatte: força Cormorant no showcase também */
+.typo-delicatte  .typo-sample .brand-themica,
+.theme-delicatte .typo-sample .brand-themica {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+}
+/* Serifa — itálico elegante */
+.typo-zodiak-jakarta .typo-sample .brand-themica { font-weight: 300; }
+.typo-delicatte      .typo-sample .brand-themica { font-weight: 300; }
+/* Display bold — contrabalançar com opacidade */
+.typo-clash-jakarta .typo-sample .brand-themica     { font-weight: 400; letter-spacing: -0.03em; }
+.typo-clash-jakarta .typo-sample .brand-themica em  { opacity: 0.65; }
+
+/* ================================================
+   AGENDA / TIMELINE
+   ================================================ */
+.agenda-container { padding: 2rem; max-width: 1200px; margin: 0 auto; }
+
+.agenda-timeline {
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 16px; padding: 1.5rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem; border: 1px solid var(--glass-border);
+}
+.timeline-header { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid var(--border-color); margin-bottom: 1rem; }
+.timeline-hour, .timeline-info { font-weight: 700; color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; font-family: var(--font-heading); }
+
+.timeline-slot { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+.timeline-slot:last-child { border-bottom: none; }
+.slot-time { font-weight: 700; color: var(--text-primary); font-size: 1rem; font-family: var(--font-heading); }
+
+.slot-empty {
+    padding: 1.5rem; border: 2px dashed var(--border-color); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    color: var(--text-muted); font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+    background: var(--bg-surface); backdrop-filter: var(--glass-blur);
+}
+.slot-empty:hover { border-color: var(--primary); color: var(--primary); }
+
+.appointment {
+    padding: 1.5rem; border-radius: 12px; border-left: 4px solid;
+    transition: all 0.3s ease; backdrop-filter: var(--glass-blur); position: relative; overflow: hidden;
+}
+.appointment::before { content: ''; position: absolute; inset: 0; background: var(--glass-bg); opacity: 0.5; z-index: 0; }
+.appointment > * { position: relative; z-index: 1; }
+.appointment:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+
+.appointment.confirmed { background: rgba(16,185,129,0.08); border-color: var(--success); }
+.appointment.waiting   { background: rgba(245,158,11,0.08); border-color: var(--warning); }
+.appointment.completed { background: rgba(59,130,246,0.08); border-color: var(--info); }
+.appointment.cancelled { background: rgba(148,163,184,0.08); border-color: var(--text-muted); }
+.appointment.urgent    { background: rgba(239,68,68,0.08); border-color: var(--danger); }
+
+.appointment-header  { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+.appointment-patient { font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-heading); }
+
+.appointment-badge                 { padding: 0.375rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; gap: 0.375rem; font-family: var(--font-heading); }
+.appointment-badge.confirmed       { background: var(--success); color: white; }
+.appointment-badge.waiting         { background: var(--warning); color: white; }
+.appointment-badge.completed       { background: var(--info); color: white; }
+.appointment-badge.cancelled       { background: var(--text-muted); color: white; }
+.appointment-badge.urgent          { background: var(--danger); color: white; }
+
+.appointment-details { display: flex; gap: 1.5rem; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; font-family: var(--font-body); }
+.appointment-details span { display: flex; align-items: center; gap: 0.375rem; }
+
+.agenda-legend { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); padding: 1.5rem; border-radius: 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--glass-border); }
+.agenda-legend h3 { font-size: 1rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; }
+.legend-items     { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.legend-item      { display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; font-weight: 600; }
+.legend-color              { width: 20px; height: 20px; border-radius: 4px; }
+.legend-color.confirmed    { background: var(--success); }
+.legend-color.waiting      { background: var(--warning); }
+.legend-color.completed    { background: var(--info); }
+.legend-color.cancelled    { background: var(--text-muted); }
+.legend-color.urgent       { background: var(--danger); }

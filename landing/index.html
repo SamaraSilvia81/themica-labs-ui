@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themica — Design System Playground</title>
+    <meta name="description" content="Teste paletas de cores, tipografia e componentes UI ao vivo antes de implementar em sistemas reais.">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <a href="#" class="nav-logo">Them<em>ica</em></a>
+    <div class="nav-links">
+        <a href="#features">Funcionalidades</a>
+        <a href="#palettes">Paletas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+    </div>
+    <a href="/themica/" class="nav-cta">
+        <i class="ph ph-flask"></i> Abrir o Lab
+    </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <!-- Blobs coloridos -->
+    <div class="lp-blob lp-blob-1"></div>
+    <div class="lp-blob lp-blob-2"></div>
+    <div class="lp-blob lp-blob-3"></div>
+    <div class="lp-blob lp-blob-4"></div>
+
+    <div class="hero-content">
+        <div class="hero-badge"><span class="badge-dot"></span> Design System Playground · v4.0</div>
+
+        <h1 class="hero-title">Them<em>ica</em></h1>
+
+        <div class="hero-floats-row">
+            <div class="hero-float hf-1"><i class="ph ph-palette"></i> 17 Paletas</div>
+            <div class="hero-float hf-2"><i class="ph ph-text-aa"></i> 14 Fontes</div>
+            <div class="hero-float hf-3"><i class="ph ph-squares-four"></i> 5 Ícones</div>
+            <div class="hero-float hf-4"><i class="ph ph-layout"></i> 3 Telas</div>
+        </div>
+
+        <p class="hero-sub">
+            Teste paletas, tipografia e componentes ao vivo
+            antes de implementar em sistemas reais.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/themica/" class="btn-hero-primary"><i class="ph ph-play-circle"></i> Abrir o Lab</a>
+            <a href="https://github.com/samarasilvia81" target="_blank" class="btn-hero-ghost"><i class="ph ph-github-logo"></i> Ver no GitHub</a>
+        </div>
+
+        <div class="hero-stats fade-in">
+            <div class="stat-item"><div class="stat-value">17</div><div class="stat-label">Paletas</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><div class="stat-value">14</div><div class="stat-label">Tipografias</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><div class="stat-value">5</div><div class="stat-label">Ícones</div></div>
+            <div class="stat-divider"></div>
+            <div class="stat-item"><div class="stat-value">&#8734;</div><div class="stat-label">Paletas salvas</div></div>
+        </div>
+    </div>
+
+    <div class="hero-scroll-hint"><i class="ph ph-arrow-down"></i></div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-label"><i class="ph ph-sparkle"></i> Funcionalidades</p>
+            <h2 class="section-title">Tudo que você precisa para <em>decidir</em></h2>
+            <p class="section-sub">Não chute como a paleta vai ficar num sistema inteiro. A Themica mostra tudo em contexto real.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-palette"></i></div><h3 class="feature-title">17 paletas prontas</h3><p class="feature-desc">De Delicatte (crimson editorial) a Tech Cyan — cada paleta com light e dark mode. Troca ao vivo, sem recarregar.</p></div>
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-text-aa"></i></div><h3 class="feature-title">14 combinações tipográficas</h3><p class="feature-desc">Pares heading + body cuidadosamente escolhidos. Veja como o nome renderiza em cada fonte antes de decidir.</p></div>
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-pencil"></i></div><h3 class="feature-title">Editor de cores ao vivo</h3><p class="feature-desc">Edite qualquer variável CSS — primary, accent, background — com HEX ou RGBA. Preview instantâneo.</p></div>
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-floppy-disk"></i></div><h3 class="feature-title">Paletas personalizadas</h3><p class="feature-desc">Salve até 8 paletas customizadas no navegador. Duplique, renomeie, exclua — sem login necessário.</p></div>
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-squares-four"></i></div><h3 class="feature-title">5 sets de ícones</h3><p class="feature-desc">Phosphor Outline, Fill, Duotone, Thin e Lucide Icons. Troca todas as instâncias da UI de uma vez.</p></div>
+            <div class="feature-card fade-in"><div class="feature-icon"><i class="ph ph-layout"></i></div><h3 class="feature-title">3 telas reais</h3><p class="feature-desc">Login, Dashboard e Agenda — componentes funcionais que reagem em tempo real a cada mudança de tema.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- PALETTES -->
+<section class="palettes-section" id="palettes">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-label"><i class="ph ph-swatches"></i> Paletas incluídas</p>
+            <h2 class="section-title">17 temas, <em>cada um único</em></h2>
+            <p class="section-sub">Mais a <a href="https://samarasilvia81.github.io/delicatte-confeitaria-app/" target="_blank" class="link-delicatte">Delicatte ✦</a> — uma loja virtual de confeitaria que criei, agora virou paleta. Você ainda pode criar as suas próprias.</p>
+        </div>
+        <div class="palettes-grid fade-in">
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#8B6BB7"></span><span style="background:#C5B5E1"></span><span style="background:#CE85D8"></span></div>Reverie Soft</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#16002E"></span><span style="background:#7030EF"></span><span style="background:#DB1FFF"></span></div>Reverie Deep</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#7c4ae0"></span><span style="background:#532d9f"></span><span style="background:#c14dd8"></span></div>Purple Gradient</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#0066FF"></span><span style="background:#00D4FF"></span><span style="background:#6B4EFF"></span></div>Azure Tech</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#00897B"></span><span style="background:#26C6DA"></span><span style="background:#4DD0E1"></span></div>Teal Clinical</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#FF6B6B"></span><span style="background:#FF8E53"></span><span style="background:#FFA07A"></span></div>Coral Vital</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#5E35B1"></span><span style="background:#AB47BC"></span><span style="background:#26C6DA"></span></div>Purple Cracked</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#9e8bff"></span><span style="background:#c4b8ff"></span><span style="background:#120936"></span></div>Frost Arctic</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#6C63FF"></span><span style="background:#FF6584"></span><span style="background:#43E97B"></span></div>Midnight Glow</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#9B59B6"></span><span style="background:#D7BDE2"></span><span style="background:#E8D5F5"></span></div>Crystal Purple</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#7B68EE"></span><span style="background:#B8B3F8"></span><span style="background:#FF8C69"></span></div>Periwinkle Dream</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#26C6A6"></span><span style="background:#89CFF0"></span><span style="background:#FF8FAB"></span></div>Mint Rose</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#4CAF50"></span><span style="background:#8BC34A"></span><span style="background:#FFC107"></span></div>Health Natural</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#E57373"></span><span style="background:#FFAB91"></span><span style="background:#CE93D8"></span></div>Skin Coral</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#00BCD4"></span><span style="background:#80DEEA"></span><span style="background:#FFEB3B"></span></div>Tech Cyan</div>
+            <div class="palette-pill"><div class="palette-dots"><span style="background:#388E3C"></span><span style="background:#AED581"></span><span style="background:#FF8F00"></span></div>Nature Green</div>
+            <a href="https://samarasilvia81.github.io/delicatte-confeitaria-app/" target="_blank" class="palette-pill featured"><div class="palette-dots"><span style="background:#860120"></span><span style="background:#fad1da"></span><span style="background:#828f58"></span></div>Delicatte ✦</a>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre-section" id="sobre">
+    <div class="sobre-bg-accent"></div>
+    <div class="section-inner">
+        <div class="sobre-grid">
+            <div class="sobre-visual fade-in">
+                <div class="avatar-wrap">
+                    <div class="avatar-ring"></div>
+                    <img src="/avatar-samara.jpg" alt="Samara Silvia Sabino" class="avatar-img" />
+                    <div class="avatar-badge"><i class="ph ph-code"></i><span>Eng. Frontend</span></div>
+                </div>
+            </div>
+            <div class="sobre-content fade-in">
+                <p class="section-label"><i class="ph ph-user"></i> Sobre</p>
+                <h2 class="section-title">Samara <em>Silvia</em> Sabino</h2>
+                <p class="sobre-role">Desenvolvedora Frontend · Especialista UX/UI</p>
+                <p class="sobre-bio">Engenheira de Software Full Stack com foco em React.js, Node.js e arquiteturas escaláveis. Mestranda em Ciência da Computação na UFPE — CIN. A Themica nasceu da minha necessidade real de testar design systems antes de implementar em produção.</p>
+                <div class="sobre-tags">
+                    <span class="tag">React.js</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Micro-frontends</span>
+                    <span class="tag">UX/UI · Figma</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">AWS · CI/CD</span>
+                    <span class="tag">Design Systems</span>
+                    <span class="tag">TypeScript</span>
+                </div>
+                <div class="sobre-destaques">
+                    <div class="destaque-item"><i class="ph ph-briefcase"></i><span>Disponível PJ · CLT · Freelance</span></div>
+                    <div class="destaque-item"><i class="ph ph-graduation-cap"></i><span>Mestranda UFPE · CIN</span></div>
+                    <div class="destaque-item"><i class="ph ph-map-pin"></i><span>Recife, PE · Brasil</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="cta-inner">
+        <p class="section-label"><i class="ph ph-rocket-launch"></i> Comece agora</p>
+        <h2 class="section-title">Pronto para <em>explorar</em>?</h2>
+        <p class="section-sub">Gratuito, open-source e sem necessidade de cadastro.</p>
+        <div class="hero-actions" style="margin-top:2.5rem;">
+            <a href="/themica/" class="btn-hero-primary"><i class="ph ph-play-circle"></i> Abrir o Lab</a>
+            <a href="https://github.com/samarasilvia81" target="_blank" class="btn-hero-ghost"><i class="ph ph-github-logo"></i> Ver código</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<section class="contato-section" id="contato">
+    <div class="section-inner">
+        <div class="section-header">
+            <p class="section-label"><i class="ph ph-chat-circle-dots"></i> Contato</p>
+            <h2 class="section-title">Vamos <em>conversar</em>?</h2>
+            <p class="section-sub">Me encontre por qualquer um desses canais.</p>
+        </div>
+        <div class="contato-grid fade-in">
+            <a href="https://instagram.com/devs_sam" target="_blank" class="contato-card instagram">
+                <div class="contato-icon"><i class="ph ph-instagram-logo"></i></div>
+                <div class="contato-info">
+                    <span class="contato-label">Instagram</span>
+                    <span class="contato-value">@devs_sam</span>
+                </div>
+                <i class="ph ph-arrow-up-right contato-arrow"></i>
+            </a>
+            <a href="mailto:samarasilvia.dev@gmail.com" class="contato-card email">
+                <div class="contato-icon"><i class="ph ph-envelope-simple"></i></div>
+                <div class="contato-info">
+                    <span class="contato-label">Email</span>
+                    <span class="contato-value">samarasilvia.dev@gmail.com</span>
+                </div>
+                <i class="ph ph-arrow-up-right contato-arrow"></i>
+            </a>
+            <a href="https://github.com/samarasilvia81" target="_blank" class="contato-card github">
+                <div class="contato-icon"><i class="ph ph-github-logo"></i></div>
+                <div class="contato-info">
+                    <span class="contato-label">GitHub</span>
+                    <span class="contato-value">samarasilvia81</span>
+                </div>
+                <i class="ph ph-arrow-up-right contato-arrow"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/samara-silvia-9a2a26231" target="_blank" class="contato-card linkedin">
+                <div class="contato-icon"><i class="ph ph-linkedin-logo"></i></div>
+                <div class="contato-info">
+                    <span class="contato-label">LinkedIn</span>
+                    <span class="contato-value">Samara Silvia</span>
+                </div>
+                <i class="ph ph-arrow-up-right contato-arrow"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-left">
+        <div class="footer-logo">Them<em>ica</em></div>
+        <p class="footer-sub">Design System Playground · v4.0</p>
+    </div>
+    <p class="footer-text">Feito com &#127912; por <strong>Samara Silvia</strong> · MIT License</p>
+    <div class="footer-socials">
+        <a href="https://github.com/samarasilvia81" target="_blank" title="GitHub"><i class="ph ph-github-logo"></i></a>
+        <a href="https://instagram.com/devs_sam" target="_blank" title="Instagram"><i class="ph ph-instagram-logo"></i></a>
+        <a href="https://www.linkedin.com/in/samara-silvia-9a2a26231" target="_blank" title="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="mailto:samarasilvia.dev@gmail.com" title="Email"><i class="ph ph-envelope-simple"></i></a>
+    </div>
+</footer>
+
+<!-- SIDEBAR -->
+<div class="lp-sidebar" id="lp-sidebar">
+    <div class="lp-sidebar-tab"><i class="ph ph-palette"></i><span class="lp-sidebar-tab-label">Temas</span></div>
+    <div class="lp-sidebar-panel">
+        <div class="lp-sidebar-title"><i class="ph ph-sliders"></i> Personalizar</div>
+        <div class="lp-section"><p class="lp-section-label">Paleta da landing</p><div class="lp-theme-grid"></div></div>
+        <div class="lp-section"><p class="lp-section-label">Aparência</p><button class="lp-dark-toggle" id="lp-dark-toggle"><i class="ph ph-moon"></i><span>Modo escuro</span></button></div>
+    </div>
+</div>
+
+<style>
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.08); }
+</style>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

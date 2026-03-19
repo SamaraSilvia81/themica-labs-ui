@@ -1,0 +1,106 @@
+/* ================================================
+   ANIMACOES & BLOBS — formas variadas
+   ================================================ */
+.background-blobs-container {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; opacity: 1;
+    transition: opacity 0.5s ease;
+}
+body.no-blobs .background-blobs-container { opacity: 0; pointer-events: none; }
+
+/* Blob base */
+.color-blob { position: absolute; filter: blur(80px); }
+
+/* Formas: cada blob tem border-radius diferente */
+.blob-1 {
+    width: 34rem; height: 28rem;
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    top: 5%; left: 30%;
+    animation: float-1 22s ease-in-out infinite;
+}
+.blob-2 {
+    width: 28rem; height: 34rem;
+    border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%;
+    top: 45%; left: 62%;
+    animation: float-2 28s ease-in-out infinite;
+}
+.blob-3 {
+    width: 22rem; height: 26rem;
+    border-radius: 70% 30% 50% 50% / 40% 70% 30% 60%;
+    top: 60%; left: 5%;
+    animation: float-3 18s ease-in-out infinite;
+}
+
+/* Light mode — mais visíveis */
+.blob-1 { background: rgba(var(--blob-1-rgb, 139,107,183), 0.28); }
+.blob-2 { background: rgba(var(--blob-2-rgb, 206,133,216), 0.22); }
+.blob-3 { background: rgba(var(--blob-3-rgb, 100,150,255), 0.18); }
+
+/* Dark mode */
+.dark-mode .blob-1 { background: rgba(var(--blob-1-rgb, 139,107,183), 0.38); }
+.dark-mode .blob-2 { background: rgba(var(--blob-2-rgb, 206,133,216), 0.30); }
+.dark-mode .blob-3 { background: rgba(var(--blob-3-rgb, 100,150,255), 0.25); }
+
+/* Temas */
+.theme-frost-arctic .blob-1 { background: rgba(158,139,255,0.28); }
+.theme-frost-arctic .blob-2 { background: rgba(18,9,54,0.22); }
+.theme-frost-arctic .blob-3 { background: rgba(196,184,255,0.18); }
+.theme-frost-arctic.dark-mode .blob-1 { background: rgba(158,139,255,0.40); }
+.theme-frost-arctic.dark-mode .blob-2 { background: rgba(18,9,54,0.35); }
+
+.theme-mint-rose .blob-1 { background: rgba(38,198,166,0.26); }
+.theme-mint-rose .blob-2 { background: rgba(255,143,171,0.24); }
+.theme-mint-rose .blob-3 { background: rgba(137,207,240,0.18); }
+
+.theme-delicatte .blob-1 { background: rgba(250,209,218,0.32); }
+.theme-delicatte .blob-2 { background: rgba(130,143,88,0.22); }
+.theme-delicatte .blob-3 { background: rgba(134,1,32,0.10); }
+.theme-delicatte.dark-mode .blob-1 { background: rgba(250,209,218,0.20); }
+.theme-delicatte.dark-mode .blob-2 { background: rgba(130,143,88,0.16); }
+
+.theme-azure-tech .blob-1 { background: rgba(0,102,255,0.22); }
+.theme-azure-tech .blob-2 { background: rgba(0,212,255,0.18); }
+.theme-azure-tech .blob-3 { background: rgba(107,78,255,0.16); }
+
+.theme-teal-clinical .blob-1 { background: rgba(0,137,123,0.24); }
+.theme-teal-clinical .blob-2 { background: rgba(38,198,218,0.20); }
+.theme-teal-clinical .blob-3 { background: rgba(77,208,225,0.16); }
+
+.theme-coral-vital .blob-1 { background: rgba(255,107,107,0.26); }
+.theme-coral-vital .blob-2 { background: rgba(255,142,83,0.22); }
+.theme-coral-vital .blob-3 { background: rgba(255,160,122,0.16); }
+
+.theme-health-natural .blob-1 { background: rgba(76,175,80,0.24); }
+.theme-health-natural .blob-2 { background: rgba(255,193,7,0.20); }
+.theme-health-natural .blob-3 { background: rgba(139,195,74,0.16); }
+
+.theme-tech-cyan .blob-1 { background: rgba(0,188,212,0.24); }
+.theme-tech-cyan .blob-2 { background: rgba(255,235,59,0.18); }
+.theme-tech-cyan .blob-3 { background: rgba(128,222,234,0.16); }
+
+.theme-nature-green .blob-1 { background: rgba(56,142,60,0.24); }
+.theme-nature-green .blob-2 { background: rgba(255,143,0,0.20); }
+.theme-nature-green .blob-3 { background: rgba(174,213,129,0.16); }
+
+.theme-midnight-glow .blob-1 { background: rgba(108,99,255,0.28); }
+.theme-midnight-glow .blob-2 { background: rgba(255,101,132,0.24); }
+.theme-midnight-glow .blob-3 { background: rgba(67,233,123,0.16); }
+
+@keyframes float-1 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    33%       { transform: translate(40px, -30px) scale(1.08) rotate(5deg); }
+    66%       { transform: translate(-20px, 20px) scale(0.95) rotate(-3deg); }
+}
+@keyframes float-2 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    40%       { transform: translate(-35px, 45px) scale(0.92) rotate(-6deg); }
+    80%       { transform: translate(25px, -20px) scale(1.06) rotate(4deg); }
+}
+@keyframes float-3 {
+    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50%       { transform: translate(30px, -40px) scale(1.10) rotate(8deg); }
+}
+@keyframes pulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%       { transform: scale(1.1) rotate(180deg); }
+}

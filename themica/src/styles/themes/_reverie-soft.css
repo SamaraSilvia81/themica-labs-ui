@@ -1,0 +1,28 @@
+/* ================================================
+   PALETA 1: REVERIE SOFT
+   ================================================ */
+.theme-reverie-soft {
+    --primary: #8B6BB7;       --primary-hover: #7357A3;
+    --secondary: #C5B5E1;     --accent: #CE85D8;
+    --success: #10b981;       --warning: #f59e0b;
+    --danger: #ef4444;        --info: #8B6BB7;
+    --bg-body: #FAF7FD;
+    --bg-surface: rgba(255,255,255,0.7);
+    --bg-elevated: rgba(255,255,255,0.85);
+    --bg-glass: rgba(197,181,225,0.15);
+    --text-primary: #2D1B3D;  --text-secondary: #6B5B7B; --text-muted: #9B8BAB;
+    --border-color: rgba(197,181,225,0.3); --border-hover: rgba(139,107,183,0.5);
+    --shadow-sm: 0 1px 2px 0 rgba(139,107,183,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(139,107,183,0.15);
+    --shadow-lg: 0 10px 15px -3px rgba(139,107,183,0.2);
+    --glass-bg: rgba(255,255,255,0.5); --glass-border: rgba(197,181,225,0.25); --glass-blur: blur(16px);
+    --gradient-primary: linear-gradient(135deg, #8B6BB7 0%, #C5B5E1 100%);
+    --gradient-accent:  linear-gradient(135deg, #CE85D8 0%, #8B6BB7 100%);
+}
+.theme-reverie-soft.dark-mode {
+    --bg-body: #1A0F26;
+    --bg-surface: rgba(45,27,61,0.6); --bg-elevated: rgba(61,40,79,0.75); --bg-glass: rgba(139,107,183,0.15);
+    --text-primary: #F5F0FA; --text-secondary: #C5B5E1; --text-muted: #8B6BB7;
+    --border-color: rgba(139,107,183,0.3); --border-hover: rgba(197,181,225,0.5);
+    --glass-bg: rgba(45,27,61,0.4); --glass-border: rgba(139,107,183,0.25);
+}

@@ -1,0 +1,67 @@
+/* ================================================
+   PALETA 17: DELICATTE
+   Replicação fiel do projeto Delicatte Confeitaria.
+   Crimson + Cream + Sage — elegância editorial.
+   Fonte natural: Cormorant Garamond + DM Sans
+   (selecione typo-delicatte para o par ideal)
+   ================================================ */
+
+/* Variáveis brutas do Delicatte */
+.theme-delicatte {
+    --primary:       #860120;
+    --primary-hover: #5c0116;
+    --secondary:     #fad1da;
+    --accent:        #828f58;
+    --success:       #828f58;
+    --warning:       #c9922a;
+    --danger:        #860120;
+    --info:          #5a3a42;
+
+    --bg-body:     #fffbef;
+    --bg-surface:  rgba(253,248,242,0.85);
+    --bg-elevated: rgba(250,244,236,0.95);
+    --bg-glass:    rgba(134,1,32,0.04);
+
+    --text-primary:   #1a0a0f;
+    --text-secondary: #5a3a42;
+    --text-muted:     #9a7a82;
+
+    --border-color: #e8ddd0;
+    --border-hover: rgba(134,1,32,0.35);
+
+    --shadow-sm: 0 1px 3px  rgba(134,1,32,.08);
+    --shadow-md: 0 4px 16px rgba(134,1,32,.10);
+    --shadow-lg: 0 12px 40px rgba(134,1,32,.14);
+
+    --glass-bg:     rgba(255,251,239,0.7);
+    --glass-border: rgba(134,1,32,0.10);
+    --glass-blur:   blur(16px);
+
+    --gradient-primary: linear-gradient(135deg, #860120 0%, #5c0116 100%);
+    --gradient-accent:  linear-gradient(135deg, #828f58 0%, #fad1da 100%);
+}
+
+/* Blobs: tom creme suave */
+.theme-delicatte .blob-1 { background: rgba(250,209,218,0.35); }
+.theme-delicatte .blob-2 { background: rgba(130,143,88,0.20); }
+
+.theme-delicatte.dark-mode {
+    --bg-body:     #06040c;
+    --bg-surface:  rgba(15,11,24,0.75);
+    --bg-elevated: rgba(26,20,37,0.85);
+    --bg-glass:    rgba(250,209,218,0.06);
+
+    --text-primary:   #fffbef;
+    --text-secondary: #fad1da;
+    --text-muted:     rgba(250,209,218,0.45);
+
+    --border-color: rgba(250,209,218,0.10);
+    --border-hover: rgba(134,1,32,0.50);
+
+    --shadow-sm: 0 1px 3px  rgba(0,0,0,.40);
+    --shadow-md: 0 4px 16px rgba(0,0,0,.50);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,.60);
+
+    --glass-bg:     rgba(15,11,24,0.60);
+    --glass-border: rgba(250,209,218,0.08);
+}

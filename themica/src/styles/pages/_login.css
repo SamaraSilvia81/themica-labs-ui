@@ -1,0 +1,136 @@
+/* ================================================
+   PAGINA DE LOGIN
+   ================================================ */
+.login-container { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; gap: 0; }
+
+.login-brand {
+    background: var(--primary);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 4rem; position: relative; overflow: hidden;
+    text-align: center;
+}
+.login-brand::before {
+    content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: pulse 15s ease-in-out infinite;
+}
+.login-brand::after {
+    content: ''; position: absolute; top: 10%; right: 10%;
+    width: 300px; height: 300px; background: var(--gradient-accent);
+    border-radius: 50%; opacity: 0.1; filter: blur(80px);
+}
+
+.logo-circle {
+    width: 120px; height: 120px; background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem; position: relative; z-index: 1; border: 3px solid rgba(255,255,255,0.3);
+}
+.logo-circle i { font-size: 3.5rem; color: white; }
+
+.brand-title    { font-size: 3rem; color: white; font-weight: 700; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+.brand-subtitle { color: rgba(255,255,255,0.9); font-size: 1.1rem; text-align: center; max-width: 400px; margin-bottom: 2rem; position: relative; z-index: 1; }
+
+/* ================================================
+   LOGO THEMICA — fonte do heading ativa + itálico
+   Quando tema/typo Delicatte: força Cormorant Garamond
+   ================================================ */
+.brand-themica {
+    font-family: var(--font-heading, inherit);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Delicatte: força Cormorant independente da typo */
+.theme-delicatte .brand-themica,
+.typo-delicatte  .brand-themica {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+}
+
+/* ── Login (fundo colorido) ─────────────────── */
+.login-brand {
+    text-align: center;         /* garante tudo centralizado */
+}
+
+.login-brand .brand-themica {
+    font-size: 3.2rem;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0.75rem;     /* um pouco mais de espaço antes do subtitle */
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+/* "ica" em itálico — usa accent do tema, não hardcoded */
+.login-brand .brand-themica em {
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    font-weight: 200;
+}
+
+/* Subtitle: uma linha só, centralizado */
+.brand-subtitle {
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    text-align: center;
+    white-space: nowrap;        /* força 1 linha */
+    width: max-content;         /* não deixa o container cortar */
+    max-width: 100%;            /* mobile: permite quebrar se necessário */
+    margin: 0 auto 2rem;        /* centraliza e mantém espaço abaixo */
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+}
+
+/* Mobile: permite quebrar se a tela for pequena demais */
+@media (max-width: 480px) {
+    .brand-subtitle { white-space: normal; max-width: 90%; }
+}
+
+/* ── Dashboard header (fundo neutro) ───────── */
+.dashboard-header .brand-themica {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+}
+.dashboard-header .brand-themica em {
+    font-style: italic;
+    color: var(--accent);       /* sempre segue o accent do tema */
+    font-weight: 200;
+}
+
+/* ── Serifa (Garamond) — em itálico elegante ── */
+/* "ica" usa --accent do tema (funciona em qualquer paleta) */
+.typo-zodiak-jakarta .brand-themica em,
+.typo-delicatte      .brand-themica em {
+    font-style: italic;
+    font-weight: 300;
+    /* herda cor do contexto (login = branco, header = accent) */
+}
+
+/* Tema Delicatte no header — crimson como accent já está definido
+   no _delicatte.css como --accent: #828f58 (sage), mas o em
+   do header já usa var(--accent), então segue automaticamente */
+
+/* No login com tema Delicatte — blush sobre crimson */
+.theme-delicatte .login-brand .brand-themica em {
+    color: rgba(250,209,218,0.75);
+}
+
+/* ── Bold (Archivo) ───────────────────────── */
+.typo-clash-jakarta .brand-themica      { font-weight: 400; letter-spacing: -0.03em; }
+.typo-clash-jakarta .brand-themica em   { font-weight: 400; opacity: 0.65; }
+
+.login-form {
+    background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+    padding: 4rem; display: flex; flex-direction: column; justify-content: center;
+    border-left: 1px solid var(--glass-border); position: relative;
+}
+.login-form::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 300px; height: 300px; background: var(--gradient-primary);
+    border-radius: 50%; opacity: 0.05; filter: blur(60px);
+}

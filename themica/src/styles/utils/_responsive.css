@@ -1,0 +1,38 @@
+/* ================================================
+   RESPONSIVIDADE
+   ================================================ */
+@media (max-width: 1024px) {
+    .login-container { grid-template-columns: 1fr; }
+    .login-brand     { display: none; }
+
+    .theme-controller,
+    .typo-controller,
+    .icon-controller,
+    .nav-controller  { width: calc(100vw - 2rem); max-width: 460px; bottom: 1rem; right: 1rem; }
+    .controller-buttons { bottom: 1rem; right: 1rem; }
+}
+
+@media (max-width: 768px) {
+    .metrics-grid    { grid-template-columns: 1fr; }
+
+    .section-header  { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .section-actions { width: 100%; flex-direction: column; }
+    .search-box input { width: 100%; }
+
+    .theme-controller,
+    .typo-controller,
+    .icon-controller,
+    .nav-controller  {
+        width: calc(100vw - 2rem);
+        left: 1rem; right: 1rem;
+        max-height: 80vh;
+        overflow-x: hidden;
+    }
+
+    /* Em mobile: paletas em coluna única para ter mais espaço */
+    .palette-buttons { grid-template-columns: 1fr; }
+
+    .color-palette-grid { grid-template-columns: 1fr; }
+    .controller-buttons { flex-direction: column; }
+    .color-editor-grid  { grid-template-columns: 1fr; }
+}

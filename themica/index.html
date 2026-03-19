@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>themica — Design System Playground</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="theme-reverie-soft typo-redhat">
+
+    <div class="background-blobs-container" aria-hidden="true">
+        <div class="color-blob blob-1"></div>
+        <div class="color-blob blob-2"></div>
+        <div class="color-blob blob-3"></div>
+    </div>
+
+    <!-- ========== TELA 1: LOGIN ========== -->
+    <div id="page-login" class="page active">
+        <div class="login-container">
+            <div class="login-brand">
+                <div class="logo-circle"><i class="ph-fill ph-palette"></i></div>
+                <h1 class="brand-title brand-themica">Them<em>ica</em></h1>
+                <p class="brand-subtitle">Design System Playground — teste paletas, tipografia e componentes ao vivo</p>
+                <div class="feature-tags">
+                    <span class="tag"><i class="ph ph-sparkle"></i> v4.0</span>
+                    <span class="tag"><i class="ph ph-paint-bucket"></i> 16 paletas</span>
+                    <span class="tag"><i class="ph ph-text-aa"></i> 13 fontes</span>
+                </div>
+            </div>
+            <div class="login-form">
+                <div class="form-header">
+                    <h2>Bem-vindo(a) de volta</h2>
+                    <p>Entre para acessar o laboratório</p>
+                </div>
+                <div class="input-group">
+                    <i class="ph ph-user" data-icon="user"></i>
+                    <input type="text" placeholder="Usuário ou E-mail">
+                </div>
+                <div class="input-group">
+                    <i class="ph ph-lock" data-icon="lock"></i>
+                    <input type="password" placeholder="Senha">
+                    <i class="ph ph-eye toggle-password" data-icon="eye"></i>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        Lembrar de mim
+                    </label>
+                    <a href="#" class="link-forgot">Esqueceu a senha?</a>
+                </div>
+                <button class="btn-primary btn-large">
+                    Acessar Sistema <i class="ph ph-arrow-right" data-icon="arrow-right"></i>
+                </button>
+                <div class="form-footer">
+                    <p>Novo por aqui? <a href="#" class="link-primary">Criar conta gratuita</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TELA 2: DASHBOARD ========== -->
+    <div id="page-dashboard" class="page">
+        <div class="dashboard-container">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-mini"><i class="ph-fill ph-palette"></i></div>
+                    <h1 class="brand-themica">Them<em>ica</em></h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-icon" title="Notificações">
+                        <i class="ph ph-bell" data-icon="bell"></i><span class="badge">3</span>
+                    </button>
+                    <button class="btn-icon" title="Configurações"><i class="ph ph-gear" data-icon="gear"></i></button>
+                    <div class="user-menu">
+                        <img src="https://i.pravatar.cc/80?img=12" alt="Avatar" class="avatar">
+                        <span class="user-name">Dr. Carlos Silva</span>
+                        <i class="ph ph-caret-down" data-icon="caret-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <div class="color-showcase glass-card">
+                <h2><i class="ph ph-palette"></i> Paleta de Cores Ativa</h2>
+                <div class="color-palette-grid">
+                    <div class="color-sample primary"><h3>Primary</h3><p>Cor principal</p></div>
+                    <div class="color-sample secondary"><h3>Secondary</h3><p>Cor secundária</p></div>
+                    <div class="color-sample accent"><h3>Accent</h3><p>Destaque</p></div>
+                    <div class="color-sample gradient-primary"><h3>Gradient Primary</h3><p>Gradiente principal</p></div>
+                    <div class="color-sample gradient-accent"><h3>Gradient Accent</h3><p>Gradiente accent</p></div>
+                </div>
+                <div class="badge-showcase">
+                    <span class="badge-color primary">Primary</span>
+                    <span class="badge-color secondary">Secondary</span>
+                    <span class="badge-color accent">Accent</span>
+                    <span class="badge-color primary-outline">Primary Outline</span>
+                    <span class="badge-color secondary-outline">Secondary Outline</span>
+                    <span class="badge-color accent-outline">Accent Outline</span>
+                </div>
+            </div>
+
+            <div class="typo-showcase">
+                <h2><i class="ph ph-text-aa"></i> Tipografia Ativa — como o nome fica em cada fonte</h2>
+                <div class="typo-samples">
+                    <div class="typo-sample">
+                        <h3 class="brand-themica" style="font-size:3.2rem">Them<em>ica</em></h3>
+                        <p><strong>Design System Playground</strong> — teste paletas, tipografia e componentes ao vivo antes de implementar em sistemas reais. Cada detalhe importa: pesos, espaçamentos, contraste e hierarquia visual. Experimente combinações até encontrar a identidade ideal para o seu projeto.</p>
+                        <div class="numbers">01234567890 • R$ 1.234,56 • #8B6BB7</div>
+                    </div>
+                    <div class="typo-sample">
+                        <h3>Análise de Contraste — <em>hierarquia e legibilidade</em></h3>
+                        <p>Observe como o heading se destaca do corpo. Uma boa hierarquia tipográfica permite que o usuário escaneie rapidamente o que é mais importante, enquanto mantém clareza na leitura contínua. Isso é essencial em sistemas onde eficiência é prioridade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon bg-success"><i class="ph ph-users"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-label">Pacientes Hoje</span>
+                        <h3 class="metric-value">24</h3>
+                        <span class="metric-trend positive"><i class="ph ph-trend-up"></i> +12%</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-primary"><i class="ph ph-calendar-check"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-label">Consultas</span>
+                        <h3 class="metric-value">18</h3>
+                        <span class="metric-trend neutral"><i class="ph ph-equals"></i> Sem mudanças</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-warning"><i class="ph ph-clock"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-label">Em Espera</span>
+                        <h3 class="metric-value">6</h3>
+                        <span class="metric-trend negative"><i class="ph ph-trend-down"></i> -3%</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon bg-info"><i class="ph ph-currency-dollar"></i></div>
+                    <div class="metric-content">
+                        <span class="metric-label">Faturamento</span>
+                        <h3 class="metric-value">R$ 3.450</h3>
+                        <span class="metric-trend positive"><i class="ph ph-trend-up"></i> +8%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-section">
+                <div class="section-header">
+                    <h2>Pacientes Recentes</h2>
+                    <div class="section-actions">
+                        <div class="search-box">
+                            <i class="ph ph-magnifying-glass"></i>
+                            <input type="text" placeholder="Buscar paciente...">
+                        </div>
+                        <button class="btn-primary"><i class="ph ph-plus"></i> Novo Paciente</button>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr><th><input type="checkbox"></th><th>Paciente</th><th>CPF</th><th>Telefone</th><th>Última Consulta</th><th>Status</th><th>Ações</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="checkbox"></td><td><div class="patient-info"><img src="https://i.pravatar.cc/40?img=1" class="patient-avatar" alt=""><span>Ana Paula Silva</span></div></td><td>123.456.789-00</td><td>(81) 98765-4321</td><td>01/02/2026</td><td><span class="badge-status active">Ativo</span></td><td><button class="btn-icon-small"><i class="ph ph-eye"></i></button><button class="btn-icon-small"><i class="ph ph-pencil"></i></button></td></tr>
+                            <tr><td><input type="checkbox"></td><td><div class="patient-info"><img src="https://i.pravatar.cc/40?img=2" class="patient-avatar" alt=""><span>Bruno Costa</span></div></td><td>987.654.321-00</td><td>(81) 91234-5678</td><td>30/01/2026</td><td><span class="badge-status active">Ativo</span></td><td><button class="btn-icon-small"><i class="ph ph-eye"></i></button><button class="btn-icon-small"><i class="ph ph-pencil"></i></button></td></tr>
+                            <tr><td><input type="checkbox"></td><td><div class="patient-info"><img src="https://i.pravatar.cc/40?img=3" class="patient-avatar" alt=""><span>Carla Mendes</span></div></td><td>456.789.123-00</td><td>(81) 99876-5432</td><td>28/01/2026</td><td><span class="badge-status pending">Pendente</span></td><td><button class="btn-icon-small"><i class="ph ph-eye"></i></button><button class="btn-icon-small"><i class="ph ph-pencil"></i></button></td></tr>
+                            <tr><td><input type="checkbox"></td><td><div class="patient-info"><img src="https://i.pravatar.cc/40?img=4" class="patient-avatar" alt=""><span>Daniel Oliveira</span></div></td><td>321.654.987-00</td><td>(81) 98123-4567</td><td>25/01/2026</td><td><span class="badge-status inactive">Inativo</span></td><td><button class="btn-icon-small"><i class="ph ph-eye"></i></button><button class="btn-icon-small"><i class="ph ph-pencil"></i></button></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <span class="table-info">Mostrando 1-4 de 124 pacientes</span>
+                    <div class="pagination">
+                        <button class="btn-pagination" disabled><i class="ph ph-caret-left"></i></button>
+                        <button class="btn-pagination active">1</button>
+                        <button class="btn-pagination">2</button>
+                        <button class="btn-pagination">3</button>
+                        <button class="btn-pagination"><i class="ph ph-caret-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TELA 3: AGENDA ========== -->
+    <div id="page-agenda" class="page">
+        <div class="agenda-container">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <div class="logo-mini"><i class="ph-fill ph-palette"></i></div>
+                    <h1 class="brand-themica">Them<em>ica</em></h1>
+                </div>
+                <div class="header-right">
+                    <button class="btn-secondary"><i class="ph ph-calendar"></i> Hoje, 19/03/2026</button>
+                    <button class="btn-primary"><i class="ph ph-plus"></i> Nova Consulta</button>
+                </div>
+            </header>
+            <div class="agenda-timeline">
+                <div class="timeline-header">
+                    <span class="timeline-hour">Horário</span>
+                    <span class="timeline-info">Consulta</span>
+                </div>
+                <div class="timeline-slot"><span class="slot-time">08:00</span><div class="appointment confirmed"><div class="appointment-header"><span class="appointment-patient"><i class="ph ph-user-circle"></i> Ana Paula Silva</span><span class="appointment-badge confirmed">Confirmado</span></div><div class="appointment-details"><span><i class="ph ph-tooth"></i> Limpeza</span><span><i class="ph ph-clock"></i> 30 min</span><span><i class="ph ph-user-circle"></i> Dr. Carlos</span></div></div></div>
+                <div class="timeline-slot"><span class="slot-time">08:30</span><div class="slot-empty"><i class="ph ph-plus-circle"></i> Disponível</div></div>
+                <div class="timeline-slot"><span class="slot-time">09:00</span><div class="appointment waiting"><div class="appointment-header"><span class="appointment-patient"><i class="ph ph-user-circle"></i> Bruno Costa</span><span class="appointment-badge waiting">Em Espera</span></div><div class="appointment-details"><span><i class="ph ph-tooth"></i> Canal</span><span><i class="ph ph-clock"></i> 60 min</span><span><i class="ph ph-user-circle"></i> Dra. Maria</span></div></div></div>
+                <div class="timeline-slot"><span class="slot-time">10:00</span><div class="appointment completed"><div class="appointment-header"><span class="appointment-patient"><i class="ph ph-user-circle"></i> Carla Mendes</span><span class="appointment-badge completed">Concluído</span></div><div class="appointment-details"><span><i class="ph ph-tooth"></i> Restauração</span><span><i class="ph ph-clock"></i> 45 min</span><span><i class="ph ph-user-circle"></i> Dr. Carlos</span></div></div></div>
+                <div class="timeline-slot"><span class="slot-time">11:00</span><div class="appointment urgent"><div class="appointment-header"><span class="appointment-patient"><i class="ph ph-user-circle"></i> Eduarda Santos</span><span class="appointment-badge urgent"><i class="ph ph-warning"></i> Urgência</span></div><div class="appointment-details"><span><i class="ph ph-tooth"></i> Emergência</span><span><i class="ph ph-clock"></i> 20 min</span><span><i class="ph ph-user-circle"></i> Dr. Carlos</span></div></div></div>
+                <div class="timeline-slot"><span class="slot-time">14:00</span><div class="slot-empty"><i class="ph ph-plus-circle"></i> Disponível</div></div>
+            </div>
+            <div class="agenda-legend">
+                <h3>Legenda de Status</h3>
+                <div class="legend-items">
+                    <div class="legend-item"><span class="legend-color confirmed"></span><span>Confirmado</span></div>
+                    <div class="legend-item"><span class="legend-color waiting"></span><span>Em Espera</span></div>
+                    <div class="legend-item"><span class="legend-color completed"></span><span>Concluído</span></div>
+                    <div class="legend-item"><span class="legend-color cancelled"></span><span>Cancelado</span></div>
+                    <div class="legend-item"><span class="legend-color urgent"></span><span>Urgência</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CONTROLADORES FLUTUANTES ========== -->
+    <!-- Modal de paleta (nome / confirmação) -->
+    <div class="palette-modal-overlay" id="palette-modal-overlay">
+        <div class="palette-modal" id="palette-modal">
+            <div class="palette-modal-header">
+                <h4 id="palette-modal-title"><i class="ph ph-floppy-disk"></i> Salvar Paleta</h4>
+                <button class="palette-modal-close" id="palette-modal-close"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="palette-modal-preview" id="palette-modal-preview"></div>
+            <label class="palette-modal-label" id="palette-modal-label">Nome da paleta</label>
+            <input class="palette-modal-input" id="palette-modal-input" type="text" maxlength="32">
+            <div class="palette-modal-actions">
+                <button class="btn-modal-cancel" id="btn-modal-cancel">Cancelar</button>
+                <button class="btn-modal-confirm" id="btn-modal-confirm">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="controller-buttons">
+        <button class="theme-controller-toggle" id="btn-toggle-theme" title="Paletas de Cores"><i class="ph ph-palette"></i></button>
+        <button class="typo-controller-toggle" id="btn-toggle-typo" title="Tipografias"><i class="ph ph-text-aa"></i></button>
+        <button class="icon-controller-toggle" id="btn-toggle-icons" title="Ícones"><i class="ph ph-squares-four"></i></button>
+        <button class="nav-controller-toggle" id="btn-toggle-nav" title="Páginas"><i class="ph ph-list"></i></button>
+    </div>
+
+    <!-- Painel: Ícones -->
+    <div class="icon-controller" id="icon-controller">
+        <div class="controller-header">
+            <h3><i class="ph ph-squares-four"></i> Ícones</h3>
+            <button class="btn-close-controller" id="btn-close-icons"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="controller-section">
+            <label>5 Estilos de Ícone</label>
+            <div class="icon-buttons"></div>
+        </div>
+    </div>
+
+    <!-- Painel: Cores + Editor -->
+    <div class="theme-controller" id="theme-controller">
+        <div class="controller-header">
+            <h3><i class="ph ph-palette"></i> Paletas & Cores</h3>
+            <button class="btn-close-controller" id="btn-close-theme"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="controller-section palette-section">
+            <div class="palette-section-toggle">
+                <span>🎨 17 Paletas</span>
+                <span class="toggle-arrow"><i class="ph ph-caret-down"></i></span>
+            </div>
+            <div class="palette-buttons-wrap">
+                <div class="palette-buttons"></div>
+            </div>
+        </div>
+        <!-- ✦ Minhas Paletas — montado dinamicamente pelo JS -->
+        <div id="custom-palettes-mount"></div>
+        <div class="controller-section mode-section">
+            <label>Modo & Blobs</label>
+            <button class="btn-mode" id="btn-toggle-mode">
+                <span class="mode-icon">🌙</span>
+                <span class="mode-text">Modo Escuro</span>
+            </button>
+            <button class="btn-blobs" id="btn-toggle-blobs">
+                <i class="ph ph-circles-three-plus"></i>
+                <span class="blobs-text">Esconder blobs</span>
+            </button>
+        </div>
+        <div id="color-editor-mount"></div>
+    </div>
+
+    <!-- Painel: Tipografia -->
+    <div class="typo-controller" id="typo-controller">
+        <div class="controller-header">
+            <h3><i class="ph ph-text-aa"></i> Tipografias</h3>
+            <button class="btn-close-controller" id="btn-close-typo"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="controller-section">
+            <label>Combinações & Singles</label>
+            <div class="typo-buttons"></div>
+        </div>
+    </div>
+
+    <!-- Painel: Navegação -->
+    <div class="nav-controller" id="nav-controller">
+        <div class="controller-header">
+            <h3><i class="ph ph-list"></i> Navegação</h3>
+            <button class="btn-close-controller" id="btn-close-nav"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="controller-section">
+            <label>Páginas de Teste</label>
+            <div class="nav-buttons"></div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

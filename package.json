@@ -1,0 +1,20 @@
+{
+  "name": "themica-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "themica",
+    "landing"
+  ],
+  "scripts": {
+    "dev":           "concurrently \"npm run dev --prefix themica\" \"npm run dev --prefix landing\"",
+    "dev:themica":   "npm run dev --prefix themica",
+    "dev:landing":   "npm run dev --prefix landing",
+    "build":         "npm run build --prefix themica && npm run build --prefix landing",
+    "build:themica": "npm run build --prefix themica",
+    "build:landing": "npm run build --prefix landing"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
